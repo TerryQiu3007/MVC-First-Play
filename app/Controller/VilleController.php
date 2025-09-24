@@ -2,6 +2,7 @@
 
 namespace Controller;
 
+use Repository\VilleRepository;
 use Studoo\EduFramework\Core\Controller\ControllerInterface;
 use Studoo\EduFramework\Core\Controller\Request;
 use Studoo\EduFramework\Core\View\TwigCore;
@@ -17,6 +18,7 @@ class VilleController implements ControllerInterface
 		    [
 		        "titre"   => 'VilleController',
 		        "add_ville" => $request->get('nom_ville')
+				"villes" => (new VilleRepository())->getVilles()
 		    ]
 		);
 	}

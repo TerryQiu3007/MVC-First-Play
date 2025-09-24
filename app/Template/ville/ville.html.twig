@@ -16,4 +16,10 @@
         <input type="text" id="nom_ville" name="nom_ville">
         <input type="submit" value="Envoyer">
     </form>
+        <h2>Liste des villes</h2>
+        <ul>
+            {% for ville in villes %}
+                <li>{{ ville.getNom() }} ({{ ville.getCodePostal() }}) - {{ ville.getNombreHabitant() }} habitants</li>
+            {% endfor %}
+        </ul>
 {% endblock %}
